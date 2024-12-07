@@ -5,8 +5,8 @@ function init(self)
 
 	local group = landback_ui.group("group1", function()
 		landback_ui.init()
-		landback_ui.button("button2")
-		landback_ui.button("button1")
+		landback_ui.button("button2", "button_1")
+		landback_ui.button("button1", "button_1")
 		landback_ui.checkbox("checkbox").set_checked(true)
 		landback_ui.radio("radio1")
 		landback_ui.radio("radio2").set_selected(true)
@@ -20,9 +20,9 @@ function init(self)
 		self.tabs = { { id = "tab1", label = "Tab 1", content_id = "content1" }, { id = "tab2", label = "Tab 2", content_id = "content2" } }
 		landback_ui.model_tabs("model-head", self.tabs)
 
-		landback_ui.button("tab1_button")
-		landback_ui.button("tab1_button1")
-		landback_ui.button("tab1_button2")
+		landback_ui.button("tab1_button", "button_1")
+		landback_ui.button("tab1_button1", "button_1")
+		landback_ui.button("tab1_button2", "button_1")
 	end)
 end
 
@@ -30,7 +30,7 @@ function on_input(self, action_id, action)
 
 	local group = landback_ui.group("group1", function()
 
-		landback_ui.button("button2", action_id, action, function(button)
+		landback_ui.button("button2", "button_1", action_id, action, function(button)
 			if button.long_pressed then
 				print("Button was long pressed")
 			else
@@ -38,7 +38,7 @@ function on_input(self, action_id, action)
 			end
 		end)
 
-		landback_ui.button("button1", action_id, action, function(button)
+		landback_ui.button("button1", "button_1", action_id, action, function(button)
 			if button.long_pressed then
 				print("Button was long pressed")
 			else
@@ -74,11 +74,11 @@ function on_input(self, action_id, action)
 		end)
 
 		if gui.is_enabled(gui.get_node("content1")) then
-			landback_ui.button("tab1_button")
-			landback_ui.button("tab1_button1")
-			landback_ui.button("tab1_button2")
+			landback_ui.button("tab1_button", "button_1", action_id, action)
+			landback_ui.button("tab1_button1", "button_1", action_id, action)
+			landback_ui.button("tab1_button2", "button_1", action_id, action)
 		else
-			landback_ui.button("tab2_button")
+			landback_ui.button("tab2_button", "button_1", action_id, action)
 		end
 	end)
 

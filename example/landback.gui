@@ -295,11 +295,14 @@ nodes {
   template_node_child: true
 }
 nodes {
+  size {
+    x: 900.0
+    y: 400.0
+  }
   type: TYPE_BOX
   texture: "landback/transparent1px"
   id: "model"
   inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
@@ -316,18 +319,6 @@ nodes {
   type: TYPE_BOX
   id: "model-head/modal-head"
   parent: "model-head"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_BOX
-  id: "model-head/content"
-  parent: "model-head/modal-head"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_BOX
-  id: "model-head/content1"
-  parent: "model-head/content"
   template_node_child: true
 }
 nodes {
@@ -369,15 +360,18 @@ nodes {
     z: 22.0
     w: 28.0
   }
-  clipping_mode: CLIPPING_MODE_STENCIL
 }
 nodes {
+  size {
+    x: 900.0
+    y: 400.0
+  }
   type: TYPE_BOX
   texture: "landback/transparent1px"
   id: "content1"
+  pivot: PIVOT_NW
   parent: "model-body"
   inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
