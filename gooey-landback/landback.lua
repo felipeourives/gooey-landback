@@ -313,7 +313,7 @@ local function refresh_input(input, config, node_id)
 		gui.set_position(cursor, vmath.vector3(25 + input.total_width, 0, 0))
 		gui.cancel_animation(cursor, gui.PROP_COLOR)
 		gui.set_color(cursor, vmath.vector4(1))
-		gui.animate(cursor, gui.PROP_COLOR, BUTTON_NORMAL_COLOR, gui.EASING_INSINE, 0.8, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+		gui.animate(cursor, gui.PROP_COLOR, COLOR_NORMAL, gui.EASING_INSINE, 0.8, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
 	else
 		gui.set_enabled(cursor, false)
 		gui.cancel_animation(cursor, gui.PROP_COLOR)
