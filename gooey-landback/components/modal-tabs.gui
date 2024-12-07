@@ -20,37 +20,6 @@ nodes {
 nodes {
   position {
     x: -101.0
-    y: -60.0
-  }
-  size {
-    x: 900.0
-    y: 400.0
-  }
-  type: TYPE_BOX
-  texture: "landback/button_normal"
-  id: "content"
-  pivot: PIVOT_NW
-  parent: "modal-head"
-  inherit_alpha: true
-  slice9 {
-    x: 22.0
-    y: 17.0
-    z: 22.0
-    w: 28.0
-  }
-  clipping_mode: CLIPPING_MODE_STENCIL
-}
-nodes {
-  type: TYPE_BOX
-  texture: "landback/transparent1px"
-  id: "content1"
-  parent: "content"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -101.0
     y: 46.382
   }
   size {

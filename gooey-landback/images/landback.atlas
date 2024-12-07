@@ -52,4 +52,10 @@ images {
 images {
   image: "/gooey-landback/images/button2_normal.png"
 }
+images {
+  image: "/gooey-landback/images/button3_normal.png"
+}
+images {
+  image: "/gooey-landback/images/button3_over.png"
+}
 extrude_borders: 1
