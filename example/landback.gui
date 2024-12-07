@@ -458,8 +458,8 @@ nodes {
 }
 nodes {
   position {
-    x: 917.0
-    y: 555.0
+    x: 910.0
+    y: 421.0
   }
   type: TYPE_BOX
   texture: "landback/transparent1px"
@@ -523,6 +523,130 @@ nodes {
   type: TYPE_TEXT
   id: "input_alphanumeric/text"
   parent: "input_alphanumeric/bg"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 945.0
+    y: 620.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "number_stepper "
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 6.0
+  }
+  type: TYPE_TEMPLATE
+  id: "add"
+  parent: "number_stepper "
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  position {
+    x: -149.0
+  }
+  size {
+    x: 100.0
+    y: 88.0
+  }
+  type: TYPE_BOX
+  id: "add/bg"
+  parent: "add"
+  overridden_fields: 1
+  overridden_fields: 4
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "+"
+  id: "add/label"
+  parent: "add/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 12.0
+  }
+  size {
+    x: 180.0
+    y: 88.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button2_normal"
+  id: "number"
+  parent: "number_stepper "
+  layer: "below"
+  inherit_alpha: true
+  slice9 {
+    x: 22.0
+    y: 17.0
+    z: 22.0
+    w: 28.0
+  }
+}
+nodes {
+  position {
+    y: 3.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "font_ui"
+  id: "number/label"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "number"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 321.0
+  }
+  type: TYPE_TEMPLATE
+  id: "sub"
+  parent: "number_stepper "
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  position {
+    x: -149.0
+  }
+  size {
+    x: 100.0
+    y: 88.0
+  }
+  type: TYPE_BOX
+  id: "sub/bg"
+  parent: "sub"
+  overridden_fields: 1
+  overridden_fields: 4
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "-"
+  id: "sub/label"
+  parent: "sub/bg"
+  overridden_fields: 8
   template_node_child: true
 }
 layers {
