@@ -1,0 +1,105 @@
+fonts {
+  name: "font_ui"
+  font: "/gooey-landback/fonts/font_ui.font"
+}
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  size {
+    x: 420.0
+    y: 340.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_pressed"
+  id: "bg"
+  pivot: PIVOT_N
+  inherit_alpha: true
+  slice9 {
+    x: 22.0
+    y: 17.0
+    z: 22.0
+    w: 28.0
+  }
+}
+nodes {
+  position {
+    y: -9.618
+  }
+  size {
+    x: 420.0
+    y: 300.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "stencil"
+  pivot: PIVOT_N
+  parent: "bg"
+  layer: "below"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  position {
+    x: -23.0
+    y: -48.0
+  }
+  size {
+    x: 349.0
+    y: 88.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_normal"
+  id: "listitem_bg"
+  parent: "stencil"
+  layer: "below"
+  inherit_alpha: true
+  slice9 {
+    x: 12.0
+    y: 12.0
+    z: 12.0
+    w: 12.0
+  }
+}
+nodes {
+  position {
+    x: -145.0
+    y: 4.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.408
+    y: 0.533
+    z: 0.533
+  }
+  type: TYPE_TEXT
+  text: "TEXT"
+  font: "font_ui"
+  id: "listitem_text"
+  pivot: PIVOT_W
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "listitem_bg"
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

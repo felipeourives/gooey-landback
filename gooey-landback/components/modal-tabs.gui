@@ -1,0 +1,130 @@
+fonts {
+  name: "font_ui"
+  font: "/gooey-landback/fonts/font_ui.font"
+}
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  position {
+    y: 246.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "modal-head"
+  pivot: PIVOT_NE
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -101.0
+    y: -60.0
+  }
+  size {
+    x: 900.0
+    y: 400.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_normal"
+  id: "content"
+  pivot: PIVOT_NW
+  parent: "modal-head"
+  inherit_alpha: true
+  slice9 {
+    x: 22.0
+    y: 17.0
+    z: 22.0
+    w: 28.0
+  }
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "content1"
+  parent: "content"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -101.0
+    y: 46.382
+  }
+  size {
+    x: 900.0
+    y: 300.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "tabs"
+  pivot: PIVOT_NW
+  parent: "modal-head"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 175.0
+  }
+  size {
+    x: 349.0
+    y: 88.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_normal"
+  id: "tab1"
+  pivot: PIVOT_N
+  parent: "tabs"
+  layer: "below"
+  inherit_alpha: true
+  slice9 {
+    x: 12.0
+    y: 12.0
+    z: 12.0
+    w: 12.0
+  }
+}
+nodes {
+  position {
+    x: -139.0
+    y: -38.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.408
+    y: 0.533
+    z: 0.533
+  }
+  type: TYPE_TEXT
+  text: "TEXT"
+  font: "font_ui"
+  id: "label"
+  pivot: PIVOT_W
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "tab1"
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

@@ -1,0 +1,55 @@
+images {
+  image: "/gooey-landback/images/button_normal.png"
+}
+images {
+  image: "/gooey-landback/images/button_pressed.png"
+}
+images {
+  image: "/gooey-landback/images/checkbox_checked_normal.png"
+}
+images {
+  image: "/gooey-landback/images/checkbox_checked_pressed.png"
+}
+images {
+  image: "/gooey-landback/images/checkbox_normal.png"
+}
+images {
+  image: "/gooey-landback/images/checkbox_pressed.png"
+}
+images {
+  image: "/gooey-landback/images/input.png"
+}
+images {
+  image: "/gooey-landback/images/radio_checked_normal.png"
+}
+images {
+  image: "/gooey-landback/images/radio_checked_pressed.png"
+}
+images {
+  image: "/gooey-landback/images/radio_normal.png"
+}
+images {
+  image: "/gooey-landback/images/radio_pressed.png"
+}
+images {
+  image: "/gooey-landback/images/transparent1px.png"
+}
+images {
+  image: "/gooey-landback/images/button_over.png"
+}
+images {
+  image: "/gooey-landback/images/checkbox_normal_selected.png"
+}
+images {
+  image: "/gooey-landback/images/checkbox_checked_selected.png"
+}
+images {
+  image: "/gooey-landback/images/radio_checked_selected.png"
+}
+images {
+  image: "/gooey-landback/images/radio_normal_selected.png"
+}
+images {
+  image: "/gooey-landback/images/button2_normal.png"
+}
+extrude_borders: 1

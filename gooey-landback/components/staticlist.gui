@@ -1,0 +1,46 @@
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  size {
+    x: 420.0
+    y: 320.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_pressed"
+  id: "bg"
+  pivot: PIVOT_N
+  inherit_alpha: true
+  slice9 {
+    x: 20.0
+    y: 16.0
+    z: 20.0
+    w: 16.0
+  }
+}
+nodes {
+  position {
+    y: -9.618
+  }
+  size {
+    x: 420.0
+    y: 300.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "stencil"
+  pivot: PIVOT_N
+  parent: "bg"
+  layer: "below"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

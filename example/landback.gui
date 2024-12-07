@@ -1,0 +1,541 @@
+script: "/example/landback.gui_script"
+fonts {
+  name: "font_ui"
+  font: "/gooey-landback/fonts/font_ui.font"
+}
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  position {
+    x: -1.0
+    y: 1334.0
+  }
+  scale {
+    x: 9.031989
+    y: 13.454239
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.659
+    y: 0.855
+    z: 0.863
+  }
+  type: TYPE_BOX
+  id: "box"
+  pivot: PIVOT_NW
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 320.0
+    y: 612.0
+  }
+  type: TYPE_TEMPLATE
+  id: "dynamiclist"
+  inherit_alpha: true
+  template: "/gooey-landback/components/dynamiclist.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "dynamiclist/bg"
+  parent: "dynamiclist"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "dynamiclist/stencil"
+  parent: "dynamiclist/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "dynamiclist/listitem_bg"
+  parent: "dynamiclist/stencil"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "dynamiclist/listitem_text"
+  parent: "dynamiclist/listitem_bg"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 112.0
+    y: 616.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "buttons"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 183.675
+    y: 485.61
+  }
+  type: TYPE_TEMPLATE
+  id: "button1"
+  parent: "buttons"
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button1/bg"
+  parent: "button1"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Button 1"
+  id: "button1/label"
+  parent: "button1/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 183.675
+    y: 599.61
+  }
+  type: TYPE_TEMPLATE
+  id: "button2"
+  parent: "buttons"
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button2/bg"
+  parent: "button2"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Button 2"
+  id: "button2/label"
+  parent: "button2/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 31.084
+    y: 339.125
+  }
+  type: TYPE_TEMPLATE
+  id: "checkbox"
+  parent: "buttons"
+  inherit_alpha: true
+  template: "/gooey-landback/components/checkbox.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "checkbox/box"
+  parent: "checkbox"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "CHECKBOX"
+  id: "checkbox/label"
+  parent: "checkbox"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 31.084
+    y: 256.604
+  }
+  type: TYPE_TEMPLATE
+  id: "radio1"
+  parent: "buttons"
+  inherit_alpha: true
+  template: "/gooey-landback/components/radio.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "radio1/button"
+  parent: "radio1"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "RADIO 1"
+  id: "radio1/label"
+  parent: "radio1"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 31.084
+    y: 186.604
+  }
+  type: TYPE_TEMPLATE
+  id: "radio2"
+  parent: "buttons"
+  inherit_alpha: true
+  template: "/gooey-landback/components/radio.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "radio2/button"
+  parent: "radio2"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "RADIO 2"
+  id: "radio2/label"
+  parent: "radio2"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 31.084
+    y: 116.604
+  }
+  type: TYPE_TEMPLATE
+  id: "radio3"
+  parent: "buttons"
+  inherit_alpha: true
+  template: "/gooey-landback/components/radio.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "radio3/button"
+  parent: "radio3"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "RADIO 3"
+  id: "radio3/label"
+  parent: "radio3"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 917.0
+    y: 555.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "Inputs"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -159.317
+    y: 10.618999
+  }
+  type: TYPE_TEMPLATE
+  id: "input"
+  parent: "Inputs"
+  inherit_alpha: true
+  template: "/gooey-landback/components/input.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "input/bg"
+  parent: "input"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "input/cursor"
+  parent: "input/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "input/text"
+  parent: "input/bg"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: -159.317
+    y: -105.381
+  }
+  type: TYPE_TEMPLATE
+  id: "input_alphanumeric"
+  parent: "Inputs"
+  inherit_alpha: true
+  template: "/gooey-landback/components/input.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "input_alphanumeric/bg"
+  parent: "input_alphanumeric"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "input_alphanumeric/cursor"
+  parent: "input_alphanumeric/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "input_alphanumeric/text"
+  parent: "input_alphanumeric/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "model"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 853.0
+    y: 966.0
+  }
+  type: TYPE_TEMPLATE
+  id: "model-head"
+  parent: "model"
+  inherit_alpha: true
+  template: "/gooey-landback/components/modal-tabs.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "model-head/modal-head"
+  parent: "model-head"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "model-head/content"
+  parent: "model-head/modal-head"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "model-head/content1"
+  parent: "model-head/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "model-head/tabs"
+  parent: "model-head/modal-head"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "model-head/tab1"
+  parent: "model-head/tabs"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "model-head/label"
+  parent: "model-head/tab1"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 750.0
+    y: 1149.0
+  }
+  size {
+    x: 900.0
+    y: 400.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_normal"
+  id: "model-body"
+  pivot: PIVOT_NW
+  parent: "model"
+  inherit_alpha: true
+  slice9 {
+    x: 22.0
+    y: 17.0
+    z: 22.0
+    w: 28.0
+  }
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "content1"
+  parent: "model-body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 24.0
+    y: -14.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.408
+    y: 0.533
+    z: 0.533
+  }
+  type: TYPE_TEXT
+  text: "Tab 1 Content"
+  font: "font_ui"
+  id: "text"
+  pivot: PIVOT_NW
+  parent: "content1"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 220.675
+    y: -180.39
+  }
+  type: TYPE_TEMPLATE
+  id: "tab1_button"
+  parent: "content1"
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "tab1_button/bg"
+  parent: "tab1_button"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Tab  1 Button 1"
+  id: "tab1_button/label"
+  parent: "tab1_button/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 220.675
+    y: -286.39
+  }
+  type: TYPE_TEMPLATE
+  id: "tab1_button1"
+  parent: "content1"
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "tab1_button1/bg"
+  parent: "tab1_button1"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Tab  1 Button 2"
+  id: "tab1_button1/label"
+  parent: "tab1_button1/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 649.675
+    y: -180.39
+  }
+  type: TYPE_TEMPLATE
+  id: "tab1_button2"
+  parent: "content1"
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "tab1_button2/bg"
+  parent: "tab1_button2"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Tab  1 Button 3"
+  id: "tab1_button2/label"
+  parent: "tab1_button2/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "content2"
+  parent: "model-body"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 24.0
+    y: -14.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.408
+    y: 0.533
+    z: 0.533
+  }
+  type: TYPE_TEXT
+  text: "Tab 2 Content"
+  font: "font_ui"
+  id: "text1"
+  pivot: PIVOT_NW
+  parent: "content2"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 214.675
+    y: -180.39
+  }
+  type: TYPE_TEMPLATE
+  id: "tab2_button"
+  parent: "content2"
+  inherit_alpha: true
+  template: "/gooey-landback/components/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "tab2_button/bg"
+  parent: "tab2_button"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  text: "Tab 2 Button"
+  id: "tab2_button/label"
+  parent: "tab2_button/bg"
+  overridden_fields: 8
+  template_node_child: true
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

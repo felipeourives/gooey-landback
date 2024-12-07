@@ -1,23 +1,23 @@
 [project]
-title = Gooey-Kenney
+title = Gooey-Landback
 dependencies#0 = https://github.com/britzl/gooey/archive/10.0.0.zip
 
 [bootstrap]
-main_collection = /example/kenneyblue.collectionc
+main_collection = /example/landback.collectionc
 
 [input]
 game_binding = /input/game.input_bindingc
 use_accelerometer = 0
 
 [display]
-width = 640
-height = 1136
+width = 1800
+height = 1336
 
 [script]
 shared_state = 1
 
 [library]
-include_dirs = gooey-kenney
+include_dirs = gooey-dirtylarry
 
 [ios]
 bundle_identifier = com.britzl.defold.gooey

@@ -1,0 +1,60 @@
+fonts {
+  name: "font_ui"
+  font: "/gooey-landback/fonts/font_ui.font"
+}
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  size {
+    x: 400.0
+    y: 64.0
+  }
+  type: TYPE_BOX
+  texture: "landback/button_normal"
+  id: "bg"
+  layer: "below"
+  inherit_alpha: true
+  slice9 {
+    x: 12.0
+    y: 12.0
+    z: 12.0
+    w: 12.0
+  }
+}
+nodes {
+  position {
+    x: -188.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "TEXT"
+  font: "font_ui"
+  id: "text"
+  pivot: PIVOT_W
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "bg"
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

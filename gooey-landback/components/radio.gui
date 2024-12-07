@@ -1,0 +1,55 @@
+fonts {
+  name: "font_ui"
+  font: "/gooey-landback/fonts/font_ui.font"
+}
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  type: TYPE_BOX
+  texture: "landback/radio_normal"
+  id: "button"
+  layer: "below"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 60.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.408
+    y: 0.533
+    z: 0.533
+  }
+  type: TYPE_TEXT
+  text: "LABEL"
+  font: "font_ui"
+  id: "label"
+  pivot: PIVOT_W
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
