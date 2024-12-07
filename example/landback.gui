@@ -26,44 +26,10 @@ nodes {
     z: 0.863
   }
   type: TYPE_BOX
-  id: "box"
+  id: "bg"
   pivot: PIVOT_NW
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 320.0
-    y: 612.0
-  }
-  type: TYPE_TEMPLATE
-  id: "dynamiclist"
-  inherit_alpha: true
-  template: "/gooey-landback/components/dynamiclist.gui"
-}
-nodes {
-  type: TYPE_BOX
-  id: "dynamiclist/bg"
-  parent: "dynamiclist"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_BOX
-  id: "dynamiclist/stencil"
-  parent: "dynamiclist/bg"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_BOX
-  id: "dynamiclist/listitem_bg"
-  parent: "dynamiclist/stencil"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_TEXT
-  id: "dynamiclist/listitem_text"
-  parent: "dynamiclist/listitem_bg"
-  template_node_child: true
 }
 nodes {
   position {
@@ -227,71 +193,36 @@ nodes {
 }
 nodes {
   position {
-    x: 917.0
-    y: 555.0
-  }
-  type: TYPE_BOX
-  texture: "landback/transparent1px"
-  id: "Inputs"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -159.317
-    y: 10.618999
+    x: 320.0
+    y: 612.0
   }
   type: TYPE_TEMPLATE
-  id: "input"
-  parent: "Inputs"
+  id: "dynamiclist"
   inherit_alpha: true
-  template: "/gooey-landback/components/input.gui"
+  template: "/gooey-landback/components/dynamiclist.gui"
 }
 nodes {
   type: TYPE_BOX
-  id: "input/bg"
-  parent: "input"
+  id: "dynamiclist/bg"
+  parent: "dynamiclist"
   template_node_child: true
 }
 nodes {
   type: TYPE_BOX
-  id: "input/cursor"
-  parent: "input/bg"
+  id: "dynamiclist/stencil"
+  parent: "dynamiclist/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "dynamiclist/listitem_bg"
+  parent: "dynamiclist/stencil"
   template_node_child: true
 }
 nodes {
   type: TYPE_TEXT
-  id: "input/text"
-  parent: "input/bg"
-  template_node_child: true
-}
-nodes {
-  position {
-    x: -159.317
-    y: -105.381
-  }
-  type: TYPE_TEMPLATE
-  id: "input_alphanumeric"
-  parent: "Inputs"
-  inherit_alpha: true
-  template: "/gooey-landback/components/input.gui"
-}
-nodes {
-  type: TYPE_BOX
-  id: "input_alphanumeric/bg"
-  parent: "input_alphanumeric"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_BOX
-  id: "input_alphanumeric/cursor"
-  parent: "input_alphanumeric/bg"
-  template_node_child: true
-}
-nodes {
-  type: TYPE_TEXT
-  id: "input_alphanumeric/text"
-  parent: "input_alphanumeric/bg"
+  id: "dynamiclist/listitem_text"
+  parent: "dynamiclist/listitem_bg"
   template_node_child: true
 }
 nodes {
@@ -523,6 +454,75 @@ nodes {
   id: "tab2_button/label"
   parent: "tab2_button/bg"
   overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 917.0
+    y: 555.0
+  }
+  type: TYPE_BOX
+  texture: "landback/transparent1px"
+  id: "Inputs"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -159.317
+    y: 10.618999
+  }
+  type: TYPE_TEMPLATE
+  id: "input"
+  parent: "Inputs"
+  inherit_alpha: true
+  template: "/gooey-landback/components/input.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "input/bg"
+  parent: "input"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "input/cursor"
+  parent: "input/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "input/text"
+  parent: "input/bg"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: -159.317
+    y: -105.381
+  }
+  type: TYPE_TEMPLATE
+  id: "input_alphanumeric"
+  parent: "Inputs"
+  inherit_alpha: true
+  template: "/gooey-landback/components/input.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "input_alphanumeric/bg"
+  parent: "input_alphanumeric"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "input_alphanumeric/cursor"
+  parent: "input_alphanumeric/bg"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "input_alphanumeric/text"
+  parent: "input_alphanumeric/bg"
   template_node_child: true
 }
 layers {
