@@ -1,5 +1,5 @@
 textures {
-  name: "kenneyblue"
+  name: "landback"
   texture: "/gooey-landback/images/landback.atlas"
 }
 nodes {
@@ -17,7 +17,7 @@ nodes {
     y: 298.0
   }
   type: TYPE_BOX
-  texture: "kenneyblue/checkbox_normal"
+  texture: "landback/checkbox_normal"
   id: "handle"
   parent: "bounds"
   layer: "below"
