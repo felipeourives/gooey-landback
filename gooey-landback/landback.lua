@@ -4,50 +4,50 @@ local utils = require "gooey.themes.utils"
 local M = gooey.create_theme()
 
 
-local COLOR_PRESSED = vmath.vector4(1.,1.,1., 1)
-local COLOR_OVER = vmath.vector4(1.,0.91,0.549, 1)
-local COLOR_NORMAL = vmath.vector4(0.408,0.533,0.533,1)
+M.COLOR_PRESSED = vmath.vector4(1.,1.,1., 1)
+M.COLOR_OVER = vmath.vector4(1.,0.91,0.549, 1)
+M.COLOR_NORMAL = vmath.vector4(0.408,0.533,0.533,1)
 
-local BUTTON_THEMES = {}
-BUTTON_THEMES["button_1"] = {}
-BUTTON_THEMES["button_1"].BUTTON_PRESSED = hash("button_pressed")
-BUTTON_THEMES["button_1"].BUTTON_OVER = hash("button_over")
-BUTTON_THEMES["button_1"].BUTTON_NORMAL = hash("button_normal")
-BUTTON_THEMES["button_1"].BUTTON_PRESSED_COLOR = COLOR_PRESSED
-BUTTON_THEMES["button_1"].BUTTON_OVER_COLOR = COLOR_OVER
-BUTTON_THEMES["button_1"].BUTTON_NORMAL_COLOR = COLOR_NORMAL
+M.BUTTON_THEMES = {}
+M.BUTTON_THEMES["button_1"] = {}
+M.BUTTON_THEMES["button_1"].BUTTON_PRESSED = hash("button_pressed")
+M.BUTTON_THEMES["button_1"].BUTTON_OVER = hash("button_over")
+M.BUTTON_THEMES["button_1"].BUTTON_NORMAL = hash("button_normal")
+M.BUTTON_THEMES["button_1"].BUTTON_PRESSED_COLOR = M.COLOR_PRESSED
+M.BUTTON_THEMES["button_1"].BUTTON_OVER_COLOR = M.COLOR_OVER
+M.BUTTON_THEMES["button_1"].BUTTON_NORMAL_COLOR = M.COLOR_NORMAL
 
-BUTTON_THEMES["button_2"] = {}
-BUTTON_THEMES["button_2"].BUTTON_PRESSED = hash("button3_over")
-BUTTON_THEMES["button_2"].BUTTON_OVER = hash("button3_over")
-BUTTON_THEMES["button_2"].BUTTON_NORMAL = hash("button3_normal")
-BUTTON_THEMES["button_2"].BUTTON_PRESSED_COLOR = COLOR_NORMAL
-BUTTON_THEMES["button_2"].BUTTON_OVER_COLOR = COLOR_NORMAL
-BUTTON_THEMES["button_2"].BUTTON_NORMAL_COLOR = COLOR_NORMAL
+M.BUTTON_THEMES["button_2"] = {}
+M.BUTTON_THEMES["button_2"].BUTTON_PRESSED = hash("button3_over")
+M.BUTTON_THEMES["button_2"].BUTTON_OVER = hash("button3_over")
+M.BUTTON_THEMES["button_2"].BUTTON_NORMAL = hash("button3_normal")
+M.BUTTON_THEMES["button_2"].BUTTON_PRESSED_COLOR = M.COLOR_NORMAL
+M.BUTTON_THEMES["button_2"].BUTTON_OVER_COLOR = M.COLOR_NORMAL
+M.BUTTON_THEMES["button_2"].BUTTON_NORMAL_COLOR = M.COLOR_NORMAL
 
-local CHEKCKBOX_PRESSED = hash("checkbox_pressed")
-local CHEKCKBOX_CHECKED_NORMAL = hash("checkbox_checked_normal")
-local CHEKCKBOX_CHECKED_PRESSED = hash("checkbox_checked_pressed")
-local CHEKCKBOX_CHECKED_SELECTED = hash("checkbox_checked_selected")
-local CHEKCKBOX_NORMAL = hash("checkbox_normal")
-local CHEKCKBOX_NORMAL_SELECTED = hash("checkbox_normal_selected")
+M.CHEKCKBOX_PRESSED = hash("checkbox_pressed")
+M.CHEKCKBOX_CHECKED_NORMAL = hash("checkbox_checked_normal")
+M.CHEKCKBOX_CHECKED_PRESSED = hash("checkbox_checked_pressed")
+M.CHEKCKBOX_CHECKED_SELECTED = hash("checkbox_checked_selected")
+M.CHEKCKBOX_NORMAL = hash("checkbox_normal")
+M.CHEKCKBOX_NORMAL_SELECTED = hash("checkbox_normal_selected")
 
-local RADIO_PRESSED = hash("radio_pressed")
-local RADIO_CHECKED_PRESSED = hash("radio_checked_pressed")
-local RADIO_CHECKED_NORMAL = hash("radio_checked_normal")
-local RADIO_CHECKED_SELECTED = hash("radio_checked_selected")
-local RADIO_NORMAL = hash("radio_normal")
-local RADIO_NORMAL_SELECTED = hash("radio_normal_selected")
+M.RADIO_PRESSED = hash("radio_pressed")
+M.RADIO_CHECKED_PRESSED = hash("radio_checked_pressed")
+M.RADIO_CHECKED_NORMAL = hash("radio_checked_normal")
+M.RADIO_CHECKED_SELECTED = hash("radio_checked_selected")
+M.RADIO_NORMAL = hash("radio_normal")
+M.RADIO_NORMAL_SELECTED = hash("radio_normal_selected")
 
-local LISTITEM_SELECTED = hash("button_pressed")
-local LISTITEM_PRESSED = hash("button_pressed")
-local LISTITEM_OVER = hash("button_normal")
-local LISTITEM_NORMAL = hash("button_normal")
+M.LISTITEM_SELECTED = hash("button_pressed")
+M.LISTITEM_PRESSED = hash("button_pressed")
+M.LISTITEM_OVER = hash("button_normal")
+M.LISTITEM_NORMAL = hash("button_normal")
 
-local TAB_SELECTED = hash("button_normal")
-local TAB_PRESSED = hash("button_normal")
-local TAB_OVER = hash("button_over")
-local TAB_NORMAL = hash("button2_normal")
+M.TAB_SELECTED = hash("button_normal")
+M.TAB_PRESSED = hash("button_normal")
+M.TAB_OVER = hash("button_over")
+M.TAB_NORMAL = hash("button2_normal")
 
 M.fields = {}
 M.list_model_tabs = {}
@@ -161,17 +161,17 @@ local function refresh_button(button)
 	end
 
 	if button.pressed then
-		gui.set_color(gui.get_node(field_id .. "/label"), BUTTON_THEMES[theme].BUTTON_PRESSED_COLOR)
-		gui.play_flipbook(button.node, BUTTON_THEMES[theme].BUTTON_PRESSED)
+		gui.set_color(gui.get_node(field_id .. "/label"), M.BUTTON_THEMES[theme].BUTTON_PRESSED_COLOR)
+		gui.play_flipbook(button.node, M.BUTTON_THEMES[theme].BUTTON_PRESSED)
 
 	elseif button.over then
 
-		gui.set_color(gui.get_node(field_id .. "/label"), BUTTON_THEMES[theme].BUTTON_OVER_COLOR)
-		gui.play_flipbook(button.node, BUTTON_THEMES[theme].BUTTON_OVER)
+		gui.set_color(gui.get_node(field_id .. "/label"), M.BUTTON_THEMES[theme].BUTTON_OVER_COLOR)
+		gui.play_flipbook(button.node, M.BUTTON_THEMES[theme].BUTTON_OVER)
 	else
 
-		gui.set_color(gui.get_node(field_id .. "/label"), BUTTON_THEMES[theme].BUTTON_NORMAL_COLOR)
-		gui.play_flipbook(button.node, BUTTON_THEMES[theme].BUTTON_NORMAL)
+		gui.set_color(gui.get_node(field_id .. "/label"), M.BUTTON_THEMES[theme].BUTTON_NORMAL_COLOR)
+		gui.play_flipbook(button.node, M.BUTTON_THEMES[theme].BUTTON_NORMAL)
 	end
 end
 
@@ -190,12 +190,12 @@ function M.button(node_id, theme, action_id, action, fn)
 		M.fields[M.current_group][field_key].theme = theme
 		M.fields[M.current_group][field_key].node_main = {}
 		M.fields[M.current_group][field_key].node_main.id = node_id .. "/bg"
-		M.fields[M.current_group][field_key].node_main.normal = BUTTON_THEMES[theme].BUTTON_NORMAL
-		M.fields[M.current_group][field_key].node_main.selected = BUTTON_THEMES[theme].BUTTON_OVER
+		M.fields[M.current_group][field_key].node_main.normal = M.BUTTON_THEMES[theme].BUTTON_NORMAL
+		M.fields[M.current_group][field_key].node_main.selected = M.BUTTON_THEMES[theme].BUTTON_OVER
 		M.fields[M.current_group][field_key].node_second = {} 
 		M.fields[M.current_group][field_key].node_second. id = node_id .. "/label"
-		M.fields[M.current_group][field_key].node_second.normal = BUTTON_THEMES[theme].BUTTON_NORMAL_COLOR
-		M.fields[M.current_group][field_key].node_second.selected = BUTTON_THEMES[theme].BUTTON_OVER_COLOR
+		M.fields[M.current_group][field_key].node_second.normal = M.BUTTON_THEMES[theme].BUTTON_NORMAL_COLOR
+		M.fields[M.current_group][field_key].node_second.selected = M.BUTTON_THEMES[theme].BUTTON_OVER_COLOR
 
 		table.insert(M.fields_by_index[M.current_group] , field_key)
 	end
@@ -211,24 +211,24 @@ local function refresh_checkbox(checkbox)
 
 	local field_key = gui.get_id(checkbox.node)
 	M.fields[M.current_group][field_key].checked = false
-	M.fields[M.current_group][field_key].node_main.normal = CHEKCKBOX_NORMAL
-	M.fields[M.current_group][field_key].node_main.selected = CHEKCKBOX_NORMAL_SELECTED
+	M.fields[M.current_group][field_key].node_main.normal = M.CHEKCKBOX_NORMAL
+	M.fields[M.current_group][field_key].node_main.selected = M.CHEKCKBOX_NORMAL_SELECTED
 
 	if checkbox.pressed_now or checkbox.released_now then
 		utils.shake(checkbox.node, vmath.vector3(1))
 	end
 
 	if checkbox.pressed and not checkbox.checked then
-		gui.play_flipbook(checkbox.node, CHEKCKBOX_PRESSED)
+		gui.play_flipbook(checkbox.node, M.CHEKCKBOX_PRESSED)
 	elseif checkbox.pressed and checkbox.checked then
-		gui.play_flipbook(checkbox.node, CHEKCKBOX_CHECKED_PRESSED)
+		gui.play_flipbook(checkbox.node, M.CHEKCKBOX_CHECKED_PRESSED)
 	elseif checkbox.checked then
 		M.fields[M.current_group][field_key].checked = true
-		M.fields[M.current_group][field_key].node_main.normal = CHEKCKBOX_CHECKED_NORMAL
-		M.fields[M.current_group][field_key].node_main.selected = CHEKCKBOX_CHECKED_SELECTED
-		gui.play_flipbook(checkbox.node, CHEKCKBOX_CHECKED_NORMAL)
+		M.fields[M.current_group][field_key].node_main.normal = M.CHEKCKBOX_CHECKED_NORMAL
+		M.fields[M.current_group][field_key].node_main.selected = M.CHEKCKBOX_CHECKED_SELECTED
+		gui.play_flipbook(checkbox.node, M.CHEKCKBOX_CHECKED_NORMAL)
 	else
-		gui.play_flipbook(checkbox.node, CHEKCKBOX_NORMAL)
+		gui.play_flipbook(checkbox.node, M.CHEKCKBOX_NORMAL)
 	end
 end
 
@@ -241,8 +241,8 @@ function M.checkbox(node_id, action_id, action, fn)
 		M.fields[M.current_group][field_key].type = "checkbox"
 		M.fields[M.current_group][field_key].node_main = {}
 		M.fields[M.current_group][field_key].node_main.id = node_id .. "/box"
-		M.fields[M.current_group][field_key].node_main.normal = CHEKCKBOX_NORMAL
-		M.fields[M.current_group][field_key].node_main.selected = CHEKCKBOX_NORMAL_SELECTED
+		M.fields[M.current_group][field_key].node_main.normal = M.CHEKCKBOX_NORMAL
+		M.fields[M.current_group][field_key].node_main.selected = M.CHEKCKBOX_NORMAL_SELECTED
 
 		table.insert(M.fields_by_index[M.current_group], field_key)
 	end
@@ -258,24 +258,24 @@ local function refresh_radiobutton(radio)
 
 	local field_key = gui.get_id(radio.node)
 	M.fields[M.current_group][field_key].checked = false
-	M.fields[M.current_group][field_key].node_main.normal = RADIO_NORMAL
-	M.fields[M.current_group][field_key].node_main.selected = RADIO_NORMAL_SELECTED
+	M.fields[M.current_group][field_key].node_main.normal = M.RADIO_NORMAL
+	M.fields[M.current_group][field_key].node_main.selected = M.RADIO_NORMAL_SELECTED
 
 	if radio.pressed_now or radio.released_now then
 		utils.shake(radio.node, vmath.vector3(1))
 	end
 
 	if radio.pressed and not radio.selected then
-		gui.play_flipbook(radio.node, RADIO_PRESSED)
+		gui.play_flipbook(radio.node, M.RADIO_PRESSED)
 	elseif radio.pressed and radio.selected then
-		gui.play_flipbook(radio.node, RADIO_CHECKED_PRESSED)
+		gui.play_flipbook(radio.node, M.RADIO_CHECKED_PRESSED)
 	elseif radio.selected then
 		M.fields[M.current_group][field_key].checked = true
-		M.fields[M.current_group][field_key].node_main.normal = RADIO_CHECKED_NORMAL
-		M.fields[M.current_group][field_key].node_main.selected = RADIO_CHECKED_SELECTED
-		gui.play_flipbook(radio.node, RADIO_CHECKED_NORMAL)
+		M.fields[M.current_group][field_key].node_main.normal = M.RADIO_CHECKED_NORMAL
+		M.fields[M.current_group][field_key].node_main.selected = M.RADIO_CHECKED_SELECTED
+		gui.play_flipbook(radio.node, M.RADIO_CHECKED_NORMAL)
 	else
-		gui.play_flipbook(radio.node, RADIO_NORMAL)
+		gui.play_flipbook(radio.node, M.RADIO_NORMAL)
 	end
 end
 
@@ -292,8 +292,8 @@ function M.radio(node_id, group_id, action_id, action, fn)
 		M.fields[M.current_group][field_key].type = "radio"
 		M.fields[M.current_group][field_key].node_main = {}
 		M.fields[M.current_group][field_key].node_main.id = node_id .. "/button"
-		M.fields[M.current_group][field_key].node_main.normal = RADIO_NORMAL
-		M.fields[M.current_group][field_key].node_main.selected = RADIO_NORMAL_SELECTED
+		M.fields[M.current_group][field_key].node_main.normal = M.RADIO_NORMAL
+		M.fields[M.current_group][field_key].node_main.selected = M.RADIO_NORMAL_SELECTED
 
 		table.insert(M.fields_by_index[M.current_group], field_key)
 	end
@@ -313,7 +313,7 @@ local function refresh_input(input, config, node_id)
 		gui.set_position(cursor, vmath.vector3(25 + input.total_width, 0, 0))
 		gui.cancel_animation(cursor, gui.PROP_COLOR)
 		gui.set_color(cursor, vmath.vector4(1))
-		gui.animate(cursor, gui.PROP_COLOR, COLOR_NORMAL, gui.EASING_INSINE, 0.8, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+		gui.animate(cursor, gui.PROP_COLOR, M.COLOR_NORMAL, gui.EASING_INSINE, 0.8, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
 	else
 		gui.set_enabled(cursor, false)
 		gui.cancel_animation(cursor, gui.PROP_COLOR)
@@ -328,24 +328,24 @@ end
 
 local function update_listitem(list, item)
 	local pos = gui.get_position(item.root)
-	local text_color = COLOR_NORMAL
+	local text_color = M.COLOR_NORMAL
 	if item == list.selected_item then
 		pos.x = 4
-		gui.play_flipbook(item.root, LISTITEM_PRESSED)
-		text_color = COLOR_PRESSED
+		gui.play_flipbook(item.root, M.LISTITEM_PRESSED)
+		text_color = M.COLOR_PRESSED
 	elseif item == list.pressed_item then
 		pos.x = 1
-		gui.play_flipbook(item.root, LISTITEM_SELECTED)
-		text_color = COLOR_PRESSED
+		gui.play_flipbook(item.root, M.LISTITEM_SELECTED)
+		text_color = M.COLOR_PRESSED
 	elseif item == list.over_item_now then
 		pos.x = 1
-		gui.play_flipbook(item.root, LISTITEM_OVER)
+		gui.play_flipbook(item.root, M.LISTITEM_OVER)
 	elseif item == list.out_item_now then
 		pos.x = 0
-		gui.play_flipbook(item.root, LISTITEM_NORMAL)
+		gui.play_flipbook(item.root, M.LISTITEM_NORMAL)
 	elseif item ~= list.over_item then
 		pos.x = 0
-		gui.play_flipbook(item.root, LISTITEM_NORMAL)
+		gui.play_flipbook(item.root, M.LISTITEM_NORMAL)
 	end
 
 	gui.set_color(item.nodes[hash(list.id .. "/listitem_text")], text_color)
@@ -407,23 +407,23 @@ local function update_tab(list, item, index)
 	end
 
 	if tab_node_id == M.list_model_tabs[M.current_group][list.id].selected_tab then
-		gui.play_flipbook(item.root, TAB_PRESSED)
-		text_color = COLOR_NORMAL
+		gui.play_flipbook(item.root, M.TAB_PRESSED)
+		text_color = M.COLOR_NORMAL
 		enable_content_node = true
 	elseif item == list.pressed_item then
 		M.list_model_tabs[M.current_group][list.id].selected_tab = tab_node_id
-		gui.play_flipbook(item.root, TAB_SELECTED)
+		gui.play_flipbook(item.root, M.TAB_SELECTED)
 		utils.shake(item.root, vmath.vector3(1))
-		text_color = COLOR_NORMAL
+		text_color = M.COLOR_NORMAL
 	elseif item == list.over_item_now then
-		gui.play_flipbook(item.root, TAB_OVER)
-		text_color = COLOR_OVER
+		gui.play_flipbook(item.root, M.TAB_OVER)
+		text_color = M.COLOR_OVER
 	elseif item == list.out_item_now then
-		gui.play_flipbook(item.root, TAB_NORMAL)
-		text_color = COLOR_PRESSED
+		gui.play_flipbook(item.root, M.TAB_NORMAL)
+		text_color = M.COLOR_PRESSED
 	elseif item ~= list.over_item then
-		gui.play_flipbook(item.root, TAB_NORMAL)
-		text_color = COLOR_PRESSED
+		gui.play_flipbook(item.root, M.TAB_NORMAL)
+		text_color = M.COLOR_PRESSED
 	end
 
 	if content_node ~= nil then
@@ -437,12 +437,12 @@ local function update_tab(list, item, index)
 	if M.fields[M.current_group][tab_node_id].node_main == nil then
 		M.fields[M.current_group][tab_node_id].node_main = {}
 		M.fields[M.current_group][tab_node_id].node_main.id = gui.get_id(item.root)
-		M.fields[M.current_group][tab_node_id].node_main.normal = TAB_NORMAL
-		M.fields[M.current_group][tab_node_id].node_main.selected = TAB_OVER
+		M.fields[M.current_group][tab_node_id].node_main.normal = M.TAB_NORMAL
+		M.fields[M.current_group][tab_node_id].node_main.selected = M.TAB_OVER
 		M.fields[M.current_group][tab_node_id].node_second = {} 
 		M.fields[M.current_group][tab_node_id].node_second.id = gui.get_id(item.nodes[hash(list.id .. "/label")])
-		M.fields[M.current_group][tab_node_id].node_second.normal = COLOR_NORMAL
-		M.fields[M.current_group][tab_node_id].node_second.selected = COLOR_OVER
+		M.fields[M.current_group][tab_node_id].node_second.normal = M.COLOR_NORMAL
+		M.fields[M.current_group][tab_node_id].node_second.selected = M.COLOR_OVER
 		M.fields[M.current_group][tab_node_id].node_main.id = gui.get_id(item.root)
 
 		M.fields[M.current_group][tab_node_id].obj = {}
