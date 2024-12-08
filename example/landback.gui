@@ -202,27 +202,78 @@ nodes {
   template: "/gooey-landback/components/dynamiclist.gui"
 }
 nodes {
+  size {
+    x: 490.0
+    y: 380.0
+  }
   type: TYPE_BOX
   id: "dynamiclist/bg"
   parent: "dynamiclist"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  position {
+    x: -225.0
+    y: -16.618
+  }
+  size {
+    x: 380.0
+    y: 340.0
+  }
   type: TYPE_BOX
   id: "dynamiclist/stencil"
+  pivot: PIVOT_NW
   parent: "dynamiclist/bg"
+  overridden_fields: 1
+  overridden_fields: 4
+  overridden_fields: 14
   template_node_child: true
 }
 nodes {
+  position {
+    x: -8.0
+    y: -3.0
+  }
   type: TYPE_BOX
   id: "dynamiclist/listitem_bg"
+  pivot: PIVOT_NW
   parent: "dynamiclist/stencil"
+  overridden_fields: 1
+  overridden_fields: 14
   template_node_child: true
 }
 nodes {
+  position {
+    x: 18.0
+    y: -37.0
+  }
   type: TYPE_TEXT
   id: "dynamiclist/listitem_text"
   parent: "dynamiclist/listitem_bg"
+  overridden_fields: 1
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 515.0
+    y: 274.0
+  }
+  type: TYPE_TEMPLATE
+  id: "dynamicscrollbar"
+  inherit_alpha: true
+  template: "/gooey-landback/components/scrollbar.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "dynamicscrollbar/bounds"
+  parent: "dynamicscrollbar"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "dynamicscrollbar/handle"
+  parent: "dynamicscrollbar/bounds"
   template_node_child: true
 }
 nodes {

@@ -369,8 +369,20 @@ local function update_dynamic_list(list)
 	end
 end
 
-function M.dynamic_list(list_id, data, action_id, action, config, fn)
-	return gooey.dynamic_list(list_id, list_id .. "/stencil", list_id .. "/listitem_bg", data, action_id, action, config, fn, update_dynamic_list)
+function M.dynamic_list(list_id, scrollbar_id, data, action_id, action, config, fn)
+	local list = gooey.dynamic_list(list_id, list_id .. "/stencil", list_id .. "/listitem_bg", data, action_id, action, config, fn, update_dynamic_list)
+
+	if scrollbar_id then
+		if list.scrolling then
+			gooey.vertical_scrollbar(scrollbar_id .. "/handle", scrollbar_id .. "/bounds").scroll_to(0, list.scroll.y)
+		else
+			gooey.vertical_scrollbar(scrollbar_id .. "/handle", scrollbar_id .. "/bounds", action_id, action, function(scrollbar)
+				gooey.dynamic_list(list_id, list_id .. "/stencil", list_id .. "/listitem_bg", data).scroll_to(0, scrollbar.scroll.y)
+			end)
+		end
+	end
+
+	return list
 end
 
 function M.group(id, fn)
@@ -493,6 +505,10 @@ function M.model_tabs(list_id, data, action_id, action, config, fn)
 	end
 
 	return gooey.horizontal_dynamic_list(list_id, list_id .. "/tabs", first_tab_id, data_list, action_id, action, config, fn, update_list_tabs)
+end
+
+function M.scrollbar(scrollbar_id, action_id, action, fn)
+	return gooey.vertical_scrollbar(scrollbar_id .. "/handle", scrollbar_id .. "/bounds")
 end
 
 function M.init()

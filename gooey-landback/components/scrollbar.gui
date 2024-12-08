@@ -1,0 +1,40 @@
+textures {
+  name: "kenneyblue"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  size {
+    x: 4.0
+    y: 300.0
+  }
+  type: TYPE_BOX
+  id: "bounds"
+  pivot: PIVOT_S
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 298.0
+  }
+  type: TYPE_BOX
+  texture: "kenneyblue/checkbox_normal"
+  id: "handle"
+  parent: "bounds"
+  layer: "below"
+  inherit_alpha: true
+  slice9 {
+    x: 6.0
+    y: 6.0
+    z: 6.0
+    w: 10.0
+  }
+  size_mode: SIZE_MODE_AUTO
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
