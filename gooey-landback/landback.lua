@@ -135,6 +135,8 @@ function M.next_field()
 
 	local field_key = M.fields_by_index[M.current_group][M.field_focused_index]
 	M.focus_field(field_key)
+
+	return field_key
 end
 
 function M.previous_field()
@@ -145,8 +147,10 @@ function M.previous_field()
 		M.field_focused_index = M.field_focused_index - 1
 	end
 
-	local field_key = M.fields_by_index[M.current_group] [M.field_focused_index]
+	local field_key = M.fields_by_index[M.current_group][M.field_focused_index]
 	M.focus_field(field_key)
+
+	return field_key
 end
 
 local function refresh_button(button)
