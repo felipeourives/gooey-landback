@@ -3,7 +3,6 @@ local utils = require "gooey.themes.utils"
 
 local M = gooey.create_theme()
 
-
 M.COLOR_PRESSED = vmath.vector4(1.,1.,1., 1)
 M.COLOR_OVER = vmath.vector4(1.,0.91,0.549, 1)
 M.COLOR_NORMAL = vmath.vector4(0.408,0.533,0.533,1)
@@ -514,6 +513,21 @@ end
 
 function M.scrollbar(scrollbar_id, action_id, action, fn)
 	return gooey.vertical_scrollbar(scrollbar_id .. "/handle", scrollbar_id .. "/bounds")
+end
+
+function M.loading(node_id, percent, color)
+	local num_squares = 4
+	local percent_piece = 100 / num_squares
+
+	for i = 1, num_squares do
+		local sq_id = node_id .. "/s" .. i
+		local sq_node = gui.get_node(sq_id)
+
+		if percent >= percent_piece * i then
+			gui.set_color(sq_node, color)
+			utils.shake(sq_node, vmath.vector3(1))
+		end
+	end
 end
 
 function M.init()

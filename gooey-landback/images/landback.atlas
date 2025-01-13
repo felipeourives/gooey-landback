@@ -58,4 +58,7 @@ images {
 images {
   image: "/gooey-landback/images/button3_over.png"
 }
+images {
+  image: "/gooey-landback/images/loading-square.png"
+}
 extrude_borders: 1

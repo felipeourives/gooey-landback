@@ -510,7 +510,7 @@ nodes {
 nodes {
   position {
     x: 910.0
-    y: 421.0
+    y: 463.0
   }
   type: TYPE_BOX
   texture: "landback/transparent1px"
@@ -698,6 +698,40 @@ nodes {
   id: "sub/label"
   parent: "sub/bg"
   overridden_fields: 8
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 834.0
+    y: 165.0
+  }
+  type: TYPE_TEMPLATE
+  id: "loading"
+  inherit_alpha: true
+  template: "/gooey-landback/components/loading.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "loading/s1"
+  parent: "loading"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "loading/s2"
+  parent: "loading"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "loading/s3"
+  parent: "loading"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "loading/s4"
+  parent: "loading"
   template_node_child: true
 }
 layers {

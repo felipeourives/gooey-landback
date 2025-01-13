@@ -1,0 +1,50 @@
+textures {
+  name: "landback"
+  texture: "/gooey-landback/images/landback.atlas"
+}
+nodes {
+  position {
+    x: -29.0
+    y: 28.0
+  }
+  type: TYPE_BOX
+  texture: "landback/loading-square"
+  id: "s1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -29.0
+    y: -28.0
+  }
+  type: TYPE_BOX
+  texture: "landback/loading-square"
+  id: "s2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 29.0
+    y: -28.0
+  }
+  type: TYPE_BOX
+  texture: "landback/loading-square"
+  id: "s3"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 29.0
+    y: 28.0
+  }
+  type: TYPE_BOX
+  texture: "landback/loading-square"
+  id: "s4"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
