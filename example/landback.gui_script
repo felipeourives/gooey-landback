@@ -1,10 +1,89 @@
 local landback_ui = require "gooey-landback.landback"
+local utils = require "gooey.themes.utils"
+
+local timers = {}
+local timer_props = {}
+timer_props.timer_counter = 0
+
+
+local function create_timer_node(node, id, i, y, shake)
+	local x = timer_props.node_pos.x + timer_props.node_size.x * (i -1) * 1.8
+	local new_node = gui.clone(node)
+
+	local pos = vmath.vector3(0)
+	pos.y = y
+	pos.x = x
+
+	gui.set_position(new_node, pos)
+	table.insert(timers[id], new_node)
+
+	if shake == true then
+		utils.shake(new_node, vmath.vector3(1))
+	end
+end
+
+local function set_timer(node, id, element_count, seconds, fn)
+
+	local timer_obj = timers[id]
+
+	if timer_props.node_size == nil then
+		timer_props.node_size = gui.get_size(node)
+	end
+
+	if timer_props.node_pos == nil then
+		timer_props.node_pos = gui.get_position(node)
+	end
+
+	gui.set_enabled(node, true)
+
+	if timer_obj ~= nil then
+
+		if element_count < #timer_obj then
+
+			for i = #timer_obj - element_count, #timer_obj do
+
+				timer.delay(1 * (i - 1), false, function()
+					utils.shake(timer_obj[i], vmath.vector3(1))
+					timer.delay(0.7, false, function()
+						gui.delete_node(timer_obj[i])
+					end)
+				end)
+				
+			end
+		else 
+			local y = gui.get_position(timer_obj[1]).y
+			for i = #timer_obj, element_count do
+				print(id, i, y)
+				create_timer_node(node, id, i, y, true)
+			end
+		end
+	end
+
+	if timer_obj == nil then
+		timers[id] = {}
+
+		local y = timer_props.node_pos.y + timer_props.node_size.y * timer_props.timer_counter * 2.5
+
+		for i = 1, element_count do
+			create_timer_node(node, id, i, y)
+		end
+
+		timer_props.timer_counter = timer_props.timer_counter + 1
+	end
+
+	gui.set_enabled(node, false)
+end
 
 function init(self)
 	landback_ui.acquire_input()
 
 	self.counter = 0
 
+	set_timer(gui.get_node("timer_element"), "timer", 5, 10)
+	set_timer(gui.get_node("timer_element"), "timer2", 5, 10)
+	set_timer(gui.get_node("timer_element"), "timer", 2, 10)
+	set_timer(gui.get_node("timer_element"), "timer2", 6, 10)
+	
 	local group = landback_ui.group("group1", function()
 		landback_ui.init()
 		landback_ui.button("button2", "button_1")
