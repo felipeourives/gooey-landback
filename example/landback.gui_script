@@ -67,6 +67,14 @@ local function set_timer(node, id, element_count, seconds, fn)
 		timer_props.timer_counter = timer_props.timer_counter + 1
 	end
 
+	if element_count > 0 then
+		timer.delay(seconds, false, function () 
+			set_timer(node, id, element_count - 1, seconds, fn)
+		end)
+	else 
+		fn()
+	end
+
 	gui.set_enabled(node, false)
 end
 
