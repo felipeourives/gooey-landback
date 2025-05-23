@@ -5,7 +5,6 @@ local timers = {}
 local timer_props = {}
 timer_props.timer_counter = 0
 
-
 local function create_timer_node(node, id, i, y, shake)
 	local x = timer_props.node_pos.x + timer_props.node_size.x * (i -1) * 1.8
 	local new_node = gui.clone(node)
@@ -47,8 +46,6 @@ local function set_timer(node, id, element_count, seconds, fn)
 						table.remove(timer_obj, i);
 					end)
 				end)
-				
-				
 			end
 		elseif element_count > #timer_obj then
 			local y = gui.get_position(timer_obj[1]).y
