@@ -39,21 +39,20 @@ local function set_timer(node, id, element_count, seconds, fn)
 	if timer_obj ~= nil then
 
 		if element_count < #timer_obj then
-
-			for i = #timer_obj - element_count, #timer_obj do
-
-				timer.delay(1 * (i - 1), false, function()
+			for i = #timer_obj, #timer_obj - (#timer_obj - element_count) + 1, -1 do
+				timer.delay(#timer_obj - i, false, function()
 					utils.shake(timer_obj[i], vmath.vector3(1))
 					timer.delay(0.7, false, function()
 						gui.delete_node(timer_obj[i])
+						table.remove(timer_obj, i);
 					end)
 				end)
 				
+				
 			end
-		else 
+		elseif element_count > #timer_obj then
 			local y = gui.get_position(timer_obj[1]).y
 			for i = #timer_obj, element_count do
-				print(id, i, y)
 				create_timer_node(node, id, i, y, true)
 			end
 		end
@@ -81,7 +80,7 @@ function init(self)
 
 	set_timer(gui.get_node("timer_element"), "timer", 5, 10)
 	set_timer(gui.get_node("timer_element"), "timer2", 5, 10)
-	set_timer(gui.get_node("timer_element"), "timer", 2, 10)
+	set_timer(gui.get_node("timer_element"), "timer", 0, 10)
 	set_timer(gui.get_node("timer_element"), "timer2", 6, 10)
 	
 	local group = landback_ui.group("group1", function()
