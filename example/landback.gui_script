@@ -71,7 +71,7 @@ local function set_timer(node, id, element_count, seconds, fn)
 		timer.delay(seconds, false, function () 
 			set_timer(node, id, element_count - 1, seconds, fn)
 		end)
-	else 
+	elseif fn ~= nil then
 		fn()
 	end
 
