@@ -117,6 +117,9 @@ end
 
 function on_input(self, action_id, action)
 
+	action.x = action.x or 0
+	action.y = action.y or 0
+
 	local group = landback_ui.group("group1", function()
 
 		landback_ui.button("button2", "button_1", action_id, action, function(button)
